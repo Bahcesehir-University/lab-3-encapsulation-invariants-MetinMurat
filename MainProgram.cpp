@@ -37,7 +37,7 @@ public:
         if (celsius < -273.15){
             throw invalid_argument ("TEMPETURE CANNOT BE BELOW ABSOLUTE ZERO");
         }
-        celsius = celsius_;
+        celsius_ = celsius;
     }
      
     // Getter: return the temperature in Celsius
@@ -61,6 +61,7 @@ public:
         if (celsius < -273.15){
              throw invalid_argument ("TEMPETURE CANNOT BE BELOW ABSOLUTE ZERO (-273.15");
         }
+        celsius_ = celsius;
     }
 };
 
@@ -123,7 +124,7 @@ public:
          if(amount <= 0){
             throw invalid_argument("Withdraw cant be negative");
         }
-         if(amount = balance_){
+         if(amount > balance_){
             throw runtime_error("insufficient funds");
         }
         balance_ -= amount;
