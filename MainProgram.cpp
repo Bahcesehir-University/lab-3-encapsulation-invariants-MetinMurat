@@ -124,7 +124,7 @@ public:
          if(amount <= 0){
             throw invalid_argument("Withdraw cant be negative");
         }
-         if(amount > balance_){
+         if(amount >= balance_){
             throw runtime_error("insufficient funds");
         }
         balance_ -= amount;
@@ -247,7 +247,7 @@ int main() {
     // --- BankAccount Demo ---
     cout << "--- BankAccount ---" << endl;
     try {
-        BankAccount alice("Alice", 1000.0);
+        BankAccount alice("Alice", -50);
         BankAccount bob("Bob", 500.0);
         cout << alice.getOwner() << " balance: " << alice.getBalance() << endl;
 
