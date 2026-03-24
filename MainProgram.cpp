@@ -111,7 +111,7 @@ public:
     void deposit(double amount) {
         // TODO: Implement
         if(amount <= 0){
-            catch invalid_argument("Deposit cant be negative");
+            throw invalid_argument("Deposit cant be negative");
         }
         balance_ += amount;
     }
