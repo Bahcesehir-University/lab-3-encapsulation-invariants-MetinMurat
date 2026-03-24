@@ -247,7 +247,7 @@ int main() {
     // --- BankAccount Demo ---
     cout << "--- BankAccount ---" << endl;
     try {
-        BankAccount alice("Alice", -50);
+        BankAccount alice("Alice", 1000.0);
         BankAccount bob("Bob", 500.0);
         cout << alice.getOwner() << " balance: " << alice.getBalance() << endl;
 
