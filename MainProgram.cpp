@@ -83,10 +83,10 @@ public:
     BankAccount(const string& owner, double initialBalance) {
         // TODO: Validate and set members
         if (owner.empty()){
-            invalid_argument("Owner cant be blank");
+            throw invalid_argument("Owner cant be blank");
         }
         if (initialBalance < 0){
-            invalid_argument("Cant be negative");
+            throw invalid_argument("Cant be negative");
         }
         owner_ = owner;
         balance_ = initialBalance;
@@ -124,7 +124,7 @@ public:
          if(amount <= 0){
             throw invalid_argument("Withdraw cant be negative");
         }
-         if(amount >= balance_){
+         if(amount > balance_){
             throw runtime_error("insufficient funds");
         }
         balance_ -= amount;
